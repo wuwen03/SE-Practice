@@ -75,10 +75,14 @@ Page({
         path: 'pages/main/main'
       };
     },
-    handleButtonClick: function(e) {
+    handleButtonClickIss: function(e) {
         // 处理按钮点击事件
-        console.log('Button clicked');
+        console.log('Button iss clicked');
+        wx.navigateTo({
+            url: '/pages/iss/iss'
+          });
       },
+    
     // 自定义方法
     customMethod: function() {
       console.log('Custom method called');
