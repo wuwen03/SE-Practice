@@ -1,0 +1,19 @@
+<!-- <view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      chosen：{{array[index]}} 
+      <image src="{{objectArray[index].pic}}" mode="aspectFit" class="inline-image"></image>
+    </view>
+  </picker>
+</view> -->
+<!-- WXML -->
+<view class="section">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      <view class="text-and-image">
+        chosen：{{array[index]}}
+        <image src="{{objectArray[index].pic}}" mode="aspectFit" class="inline-image"></image>
+      </view>
+    </view>
+  </picker>
+</view>

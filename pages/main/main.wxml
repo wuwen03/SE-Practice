@@ -1,0 +1,6 @@
+<!-- pages/main/main.wxml -->
+<view class="button-container">
+  <button class="rounded-button">按钮1</button>
+  <button class="rounded-button">按钮2</button>
+  <button class="rounded-button">internation student service</button>
+</view>

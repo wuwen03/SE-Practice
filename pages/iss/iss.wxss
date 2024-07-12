@@ -1,0 +1,19 @@
+@import "weui.wxss";
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+.page {
+    padding-top: 80px;
+}
+.text-and-image {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+  }
+  .inline-image {
+    display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: middle; /* 与文本中部对齐 */
+    margin-left: 10rpx; /* 根据需要调整间距 */
+  }
