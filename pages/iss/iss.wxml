@@ -17,3 +17,9 @@
     </view>
   </picker>
 </view>
+<view class="button-container">
+  <button bindtap="handleButtonClickTRANS"class="rounded-button">translante</button>
+  <button bindtap="handleButtonClickCOR"class="rounded-button">correct</button>
+  <button bindtap="handleButtonClickSUM"class="rounded-button">summary</button>
+  <button bindtap="handleButtonClickOCR"class="rounded-button">ocr</button>
+</view>

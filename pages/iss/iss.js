@@ -33,4 +33,11 @@ Page({
         index: e.detail.value
       })
     },
+    handleButtonClickTRANS: function(e) {
+        // 处理按钮点击事件
+        console.log('Button translat clicked');
+        wx.navigateTo({
+            url: '/pages/iss/iss'
+          });
+      },
   })
