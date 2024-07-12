@@ -15,8 +15,8 @@
 
 ## translate
 
-#### URL£º
-POST http://$address$/translate
+#### URLï¼š
+POST http://$address$/translate/
 
 #### Request
 
@@ -29,21 +29,21 @@ Body:
 }
 ```
 
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-src_language | string | ÊäÈëÓïÑÔ | N
-dst_language | string | Êä³öÓïÑÔ | N
-content | string | Òª·­ÒëµÄÄÚÈİ | N
+src_language | string | è¾“å…¥è¯­è¨€ | N
+dst_language | string | è¾“å‡ºè¯­è¨€ | N
+content | string | è¦ç¿»è¯‘çš„å†…å®¹ | N
 
 #### Response
 
 Status Code:
 
 
-Âë | ÃèÊö
+ç  | æè¿°
 --- | ---
-200 | ·­Òë³É¹¦
-5XX | Ê§°Ü
+200 | ç¿»è¯‘æˆåŠŸ
+5XX | å¤±è´¥
 
 Body:
 ```
@@ -52,16 +52,16 @@ Body:
     "message":"$error message$"
 }
 ```
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-result | string | ·­Òë½á¹ûÄÚÈİ | N
-message | string | ·µ»Ø´íÎóÏûÏ¢£¬³É¹¦Ê±Îª"ok" | N
+result | string | ç¿»è¯‘ç»“æœå†…å®¹ | N
+message | string | è¿”å›é”™è¯¯æ¶ˆæ¯ï¼ŒæˆåŠŸæ—¶ä¸º"ok" | N
 
 
 ## ocr
 
-#### URL£º
-POST http://$address$/ocr
+#### URLï¼š
+POST http://$address$/ocr/
 
 #### Request
 
@@ -72,19 +72,19 @@ Body:
 }
 ```
 
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-picture | string | ±àÂëºóµÄÍ¼Æ¬ | N
+picture | string | ç¼–ç åçš„å›¾ç‰‡ | N
 
 #### Response
 
 Status Code:
 
 
-Âë | ÃèÊö
+ç  | æè¿°
 --- | ---
-200 | ÎÄ×ÖÊ¶±ğ³É¹¦
-5XX | Ê§°Ü
+200 | æ–‡å­—è¯†åˆ«æˆåŠŸ
+5XX | å¤±è´¥
 
 Body:
 ```
@@ -93,16 +93,16 @@ Body:
     "message":"$error message$"
 }
 ```
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-result | string | Ê¶±ğ½á¹ûÄÚÈİÎÄ×Ö | N
-message | string | ·µ»Ø´íÎóÏûÏ¢£¬³É¹¦Ê±Îª"ok" | N
+result | string | è¯†åˆ«ç»“æœå†…å®¹æ–‡å­— | N
+message | string | è¿”å›é”™è¯¯æ¶ˆæ¯ï¼ŒæˆåŠŸæ—¶ä¸º"ok" | N
 
 
 ## correct
 
-#### URL£º
-POST http://$address$/correct
+#### URLï¼š
+POST http://$address$/correct/
 
 #### Request
 
@@ -113,19 +113,19 @@ Body:
 }
 ```
 
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-content | string | ÒªÅú¸ÄµÄÄÚÈİ | N
+content | string | è¦æ‰¹æ”¹çš„å†…å®¹ | N
 
 #### Response
 
 Status Code:
 
 
-Âë | ÃèÊö
+ç  | æè¿°
 --- | ---
-200 | Åú¸Ä³É¹¦
-5XX | Ê§°Ü
+200 | æ‰¹æ”¹æˆåŠŸ
+5XX | å¤±è´¥
 
 Body:
 ```
@@ -134,17 +134,17 @@ Body:
     "message":"$error message$"
 }
 ```
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-result | string | Åú¸Ä½á¹ûÄÚÈİ | N
-message | string | ·µ»Ø´íÎóÏûÏ¢£¬³É¹¦Ê±Îª"ok" | N
+result | string | æ‰¹æ”¹ç»“æœå†…å®¹ | N
+message | string | è¿”å›é”™è¯¯æ¶ˆæ¯ï¼ŒæˆåŠŸæ—¶ä¸º"ok" | N
 
 
 
 ## summary
 
-#### URL£º
-POST http://$address$/summary
+#### URLï¼š
+POST http://$address$/summary/
 
 #### Request
 
@@ -155,19 +155,19 @@ Body:
 }
 ```
 
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-content | string | ÒªÕªÒªµÄÄÚÈİ | N
+content | string | è¦æ‘˜è¦çš„å†…å®¹ | N
 
 #### Response
 
 Status Code:
 
 
-Âë | ÃèÊö
+ç  | æè¿°
 --- | ---
-200 | ÕªÒª³É¹¦
-5XX | Ê§°Ü
+200 | æ‘˜è¦æˆåŠŸ
+5XX | å¤±è´¥
 
 Body:
 ```
@@ -176,15 +176,15 @@ Body:
     "message":"$error message$"
 }
 ```
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-result | string | ÕªÒª½á¹ûÄÚÈİ | N
-message | string | ·µ»Ø´íÎóÏûÏ¢£¬³É¹¦Ê±Îª"ok" | N
+result | string | æ‘˜è¦ç»“æœå†…å®¹ | N
+message | string | è¿”å›é”™è¯¯æ¶ˆæ¯ï¼ŒæˆåŠŸæ—¶ä¸º"ok" | N
 
 
 ## login
 
-#### URL£º
+#### URLï¼š
 POST http://$address$/user/login
 
 #### Request
@@ -196,7 +196,7 @@ Body:
 }
 ```
 
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
 
 
@@ -206,10 +206,10 @@ Body:
 Status Code:
 
 
-Âë | ÃèÊö
+ç  | æè¿°
 --- | ---
-200 | µÇÂ¼³É¹¦
-5XX | Ê§°Ü
+200 | ç™»å½•æˆåŠŸ
+5XX | å¤±è´¥
 
 Body:
 ```
@@ -217,15 +217,15 @@ Body:
     "language":"$language$"
 }
 ```
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-language | string | ÓÃ»§ÓïÑÔ | N
-message | string | ·µ»Ø´íÎóÏûÏ¢£¬³É¹¦Ê±Îª"ok" | N
+language | string | ç”¨æˆ·è¯­è¨€ | N
+message | string | è¿”å›é”™è¯¯æ¶ˆæ¯ï¼ŒæˆåŠŸæ—¶ä¸º"ok" | N
 
 
 ## register
 
-#### URL£º
+#### URLï¼š
 POST http://$address$/user/register
 
 #### Request
@@ -237,19 +237,19 @@ Body:
 }
 ```
 
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-language | string | ÓÃ»§Ñ¡ÔñµÄÊ¹ÓÃÓïÑÔ | N
+language | string | ç”¨æˆ·é€‰æ‹©çš„ä½¿ç”¨è¯­è¨€ | N
 
 #### Response
 
 Status Code:
 
 
-Âë | ÃèÊö
+ç  | æè¿°
 --- | ---
-200 | ×¢²á³É¹¦
-5XX | Ê§°Ü
+200 | æ³¨å†ŒæˆåŠŸ
+5XX | å¤±è´¥
 
 Body:
 ```
@@ -257,6 +257,6 @@ Body:
 
 }
 ```
-±äÁ¿Ãû | ÀàĞÍ | ÃèÊö | ÊÇ·ñ¿ÉÎª¿Õ
+å˜é‡å | ç±»å‹ | æè¿° | æ˜¯å¦å¯ä¸ºç©º
 ---|---|---|---
-message | string | ·µ»Ø´íÎóÏûÏ¢£¬³É¹¦Ê±Îª"ok" | N
+message | string | è¿”å›é”™è¯¯æ¶ˆæ¯ï¼ŒæˆåŠŸæ—¶ä¸º"ok" | N
