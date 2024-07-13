@@ -1,7 +1,7 @@
 #翻译
 
 from flask import Blueprint,request,jsonify
-from model.translate import Translate
+from be.model.translate import Translate
 
 bp_translate = Blueprint("translate",__name__,url_prefix="/translate")
 

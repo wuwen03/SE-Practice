@@ -1,8 +1,8 @@
 #翻译
 
 from flask import Blueprint,request,jsonify
-from model.translate import Translate
-from model.ocr import Ocr
+from be.model.translate import Translate
+from be.model.ocr import Ocr
 
 bp_ocr = Blueprint("ocr",__name__,url_prefix="/ocr")
 

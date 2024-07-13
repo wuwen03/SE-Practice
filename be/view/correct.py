@@ -1,7 +1,7 @@
 #1、根据输入的中文文本进行改写，指出语法错误
 
 from flask import Blueprint,request,jsonify
-from model.correct import Correct
+from be.model.correct import Correct
 
 bp_correct = Blueprint("correct",__name__,url_prefix="/correct")
 
