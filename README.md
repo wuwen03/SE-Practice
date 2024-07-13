@@ -13,6 +13,10 @@
   |-- fe
 ```
 
+## 通义千问api使用方法
+
+在使用前将api_key填到be/utils/api.py中的对应位置，然后在使用时候调用call_with_messages即可。参数是输入，返回值就是通义千问的输出。不过现在只支持文字的输入
+
 ## translate
 
 #### URL：

@@ -41,8 +41,8 @@ def be_run():
     app.register_blueprint(bp_user)
     app.register_blueprint(bp_ocr)
     init_completed_event.set()
-    # app.run(host="0.0.0.0")    
-    app.run()
+    app.run(host="0.0.0.0")    
+    # app.run()
 
 if __name__ == "__main__":
     be_run()
