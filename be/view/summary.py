@@ -1,7 +1,7 @@
 #概括
 from flask import Blueprint,request,jsonify
-from model.summary import Summary
-from utils.logger import logger
+from be.model.summary import Summary
+from be.utils.logger import logger
 
 bp_summary = Blueprint("summary",__name__,url_prefix="/summary")
 
