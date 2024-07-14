@@ -9,5 +9,5 @@ bp_correct = Blueprint("correct",__name__,url_prefix="/correct")
 def correct():
     text = request.json.get("content")
     correct = Correct(text)
-    code,message,res = correct.do_correct(text)
+    code,message,res = correct.do_correct()
     return jsonify({"message":message,"result":res}),code

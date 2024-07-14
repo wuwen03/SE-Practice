@@ -1,9 +1,13 @@
+from be.utils.api import call_with_messages
 class Correct:
     def __init__(self,text) -> None:
-        self.template = "帮我重写以下这段文字，并指出其中的语法错误：{}"
         self.text = text
 
     def do_correct(self)->tuple[int,str,str]:
-        '''连接通义千问api,获取改正后的答案'''
-        ans = "answer"
-        return 200,ans
+        try:
+            result = call_with_messages("帮我重写下面这段话，并用数字列出其中的语法错误:{}".
+                                        format(self.text))
+        except BaseException as e:
+            return 530, "{}".format(str(e)), ""
+        
+        return 200, "ok", result 
