@@ -2,3 +2,4 @@ __pycache__
 .coverage
 *.ipynb
 *.log
+key.txt
