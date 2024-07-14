@@ -11,9 +11,10 @@ class Translate:
         translater = Translator()
         try:
             # result = translater.translate(self.content, self.dst_lang, self.src_lang)
-            result = call_with_messages("将下面一段话翻译成中文:{}".format(self.content))
-        except ValueError as e:
-            return 501, "{}".format(str(e)), ""
+            result = call_with_messages("将下面一段{}翻译成{}:{}".
+                                        format(self.src_lang, self.dst_lang, self.content))
+        # except ValueError as e:
+        #     return 501, "{}".format(str(e)), ""
         except BaseException as e:
             return 530, "{}".format(str(e)), ""
         

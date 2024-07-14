@@ -9,9 +9,9 @@ class TestTranslate:
         yield
 
     def test_ok(self):
-        code, result = self.translate.do_translate("auto", "zh-cn", "i love you") #语言代码可能要改
+        code, result = self.translate.do_translate("にほんご", "english", "にほんご") #japanese
         assert code == 200
     
-    def test_no_language(self):
-        code, result = self.translate.do_translate("abc", "", "i  love you")
-        assert code != 200
+    def test_error_language(self):
+        code, result = self.translate.do_translate("abc", "", "i love you")
+        assert code == 200

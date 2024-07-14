@@ -3,4 +3,5 @@ class Ocr:
         pass
 
     def do_ocr(self) -> tuple[int,str,str]:
-        pass
+        # Todo
+        return 200, "", ""
