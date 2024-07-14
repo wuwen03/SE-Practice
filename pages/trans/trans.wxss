@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* 确保子元素水平拉伸 */
+    padding: 20px;
+    gap: 20px; /* 添加间隙 */
+  }
+  
+  .input-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .original-text, .translated-text {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #ccc;
+    padding: 10px;
+    flex-grow: 1; /* 让元素根据可用空间增长 */
+    min-height: 0; /* 允许元素根据内容自动调整高度 */
+    box-sizing: border-box;
+    overflow-y: auto;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+  }

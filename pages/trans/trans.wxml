@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="input-section">
+    <input id="text-input" placeholder="请输入文本" bindinput="onInputChanged"/>
+    <button id="translate-button" bindtap="onTranslate">翻译</button>
+  </view>
+  <view class="original-text">
+    <view>原文:</view>
+    <textarea disabled value="{{originalText}}" style="flex-grow: 1;"></textarea>
+  </view>
+  <view class="translated-text">
+    <view>译文:</view>
+    <textarea disabled value="{{translatedText}}" style="flex-grow: 1;"></textarea>
+  </view>
+  <view class="error-message" wx:if="{{errorMessage}}">{{errorMessage}}</view>
+</view>
