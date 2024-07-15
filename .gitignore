@@ -3,3 +3,5 @@ __pycache__
 *.ipynb
 *.log
 key.txt
+key.py
+test

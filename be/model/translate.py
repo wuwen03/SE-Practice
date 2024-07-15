@@ -1,4 +1,4 @@
-from googletrans import Translator
+# from googletrans import Translator
 from be.utils.api import call_with_messages
 
 class Translate:
@@ -8,7 +8,7 @@ class Translate:
         self.content = content
 
     def do_translate(self) -> tuple[int,str,str]:
-        translater = Translator()
+        # translater = Translator()
         try:
             # result = translater.translate(self.content, self.dst_lang, self.src_lang)
             result = call_with_messages("将下面一段{}翻译成{}:{}".
