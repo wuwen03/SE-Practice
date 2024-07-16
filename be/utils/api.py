@@ -2,11 +2,13 @@ import dashscope
 from dashscope import Generation
 from http import HTTPStatus
 import random
-# from logger import logger
-# from key import APIKEY
 from be.utils.logger import logger
-from be.utils.key import APIKEY
-dashscope.api_key = APIKEY
+from be.utils.key import QWEN_API_KEY
+# from key import QWEN_API_KEY
+# from logger import logger
+
+APIKEY = QWEN_API_KEY
+dashscope.api_key = QWEN_API_KEY
 
 def call_with_messages(content:str):
     messages = [{'role': 'system', 'content': 'You are a helpful assistant.'},
@@ -26,17 +28,13 @@ def call_with_messages(content:str):
         ))
     return response.output.choices[0].message.content
 
+
 from openai import OpenAI
 import os
 import base64
 import mimetypes
-#图片用base64的格式提交
-def call_with_image(img_path,content,is_base64:bool) -> str:    
-    client = OpenAI(        
-        api_key=APIKEY,        
-        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",    
-    )    
-    # image_path = '/root/se_practice/test/作文.png'    
+
+def handle_image(img_path):
     image_path = img_path
     mime_type, _ = mimetypes.guess_type(image_path)    # 校验MIME类型为支持的图片格式    
     if mime_type and mime_type.startswith('image'):        
@@ -44,37 +42,50 @@ def call_with_image(img_path,content,is_base64:bool) -> str:
             encoded_image = base64.b64encode(image_file.read())            
             encoded_image_str = encoded_image.decode('utf-8')            # 创建数据前缀            
             data_uri_prefix = f'data:{mime_type};base64,'            # 拼接前缀和Base64编码的图像数据            
-            encoded_image_str = data_uri_prefix + encoded_image_str                        
-            completion = client.chat.completions.create(                
-                model="qwen-vl-plus",                
-                messages=[                    
-                    {                        
-                        "role": "user",                        
-                        "content": [                            
-                                        {                                
-                                            "type": "text",                                
-                                            "text": content                            
-                                        },                            
-                                        {                                
-                                            "type": "image_url",                                
-                                            "image_url": {                                    
-                                                "url": encoded_image_str                                
-                                            }                            
-                                        }                        
-                                    ]                    
-                    }                
-                ],                
-                top_p=0.8,                
-                # stream=False,                
-                # stream_options={"include_usage": True}            
-            )            
-            # for chunk in completion:                
-            #     print(chunk.model_dump_json())    
-            # else:        
-            #     print("MIME type unsupported or not found.")
-        res = completion.choices[0].message.content
-        print(res)
-        return res         
+            encoded_image_str = data_uri_prefix + encoded_image_str
+        return "ok", encoded_image_str
+    else:
+        return "invalid type", bytes()
+
+#图片用base64的格式提交
+def call_with_image(encoded_image_str, content) -> str:    
+    client = OpenAI(        
+        api_key=APIKEY,        
+        base_url="https://dashscope.aliyuncs.com/compatible-mode/v1",    
+    )      
+    # isvalid, encoded_image_str = handle_image(img_path)  
+    # if isvalid != "ok":
+    #     return ""                     
+    completion = client.chat.completions.create(                
+            model="qwen-vl-plus",                
+            messages=[                    
+                {                        
+                    "role": "user",                        
+                    "content": [                            
+                                    {                                
+                                        "type": "text",                                
+                                        "text": content                            
+                                    },                            
+                                    {                                
+                                        "type": "image_url",                                
+                                        "image_url": {                                    
+                                            "url": encoded_image_str                                
+                                        }                            
+                                    }                        
+                                ]                    
+                }                
+            ],                
+            top_p=0.8,                
+            # stream=False,                
+            # stream_options={"include_usage": True}            
+        )            
+        # for chunk in completion:                
+        #     print(chunk.model_dump_json())    
+        # else:        
+        #     print("MIME type unsupported or not found.")
+    res = completion.choices[0].message.content
+    # print(res)
+    return res         
 
 import requests
 import json
@@ -155,8 +166,8 @@ def call_with_file(file_path):
     print(str(resp.request.body,"ascii"))
     print(json.loads(resp.content))
 
-if __name__ == "__main__":    
-    # res = call_with_image('/root/se_practice/test/作文.png',"提取图中的文字")
-    # print(res)
+
+if __name__ == "__main__":   
+    pass
     # upload_file('/root/se_practice/test/hello.txt')
-    call_with_file('/root/se_practice/test/作文.png')
+    # call_with_file('/root/se_practice/test/作文.png')
