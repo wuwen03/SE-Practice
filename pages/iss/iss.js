@@ -6,25 +6,25 @@ Page({
           id: 0,
           name: '中国',
           pic:'https://flagcdn.com/w2560/cn.png',
-          language:'CN'
+          language:'中文'
         },
         {
           id: 1,
           name: '美国',
           pic:'https://flagcdn.com/w2560/us.png',
-          language:'EN'
+          language:'英文'
         },
         {
           id: 2,
           name: '巴西',
           pic:'https://flagcdn.com/w2560/br.png',
-          language:'PU'
+          language:'葡萄牙文'
         },
         {
           id: 3,
           name: '日本',
           pic:'https://flagcdn.com/w2560/jp.png',
-          language:'JP'
+          language:'日文'
         }
       ],
       index: 0

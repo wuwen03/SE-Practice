@@ -6,6 +6,8 @@ App({
       },
   onLaunch() {
     this.globalData.chosen_language='EN';
+
+    
     // 展示本地存储能力
     const logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())

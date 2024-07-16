@@ -17,12 +17,9 @@ Page({
           url: 'http://47.113.205.144:5000/translate/',
           method: 'POST',
           data: { 
-            "src_language":"英文",
+            "src_language":getApp().globalData.chosen_language,
             "dst_language":"CN",
             "content":originalText },
-          // header: {
-          //   'content-type': 'application/json'
-          // }
           success(res) {
             console.log(res)
             that.setData({originalText: '',

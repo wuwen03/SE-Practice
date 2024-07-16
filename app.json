@@ -1,12 +1,8 @@
 {
   "pages": [
-    
     "pages/main/main",
     "pages/iss/iss",
-    "pages/trans/trans",
-    "pages/index/index",
-    "pages/logs/logs"
-    
+    "pages/trans/trans"
   ],
   "window": {
     "navigationBarTextStyle": "black",
