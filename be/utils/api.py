@@ -19,13 +19,13 @@ def call_with_messages(content:str):
                                seed=random.randint(1, 10000),
                                # 将输出设置为"message"格式
                                result_format='message')
-    if response.status_code == HTTPStatus.OK:
-        logger.info(response)
-    else:
-        logger.info('Request id: %s, Status code: %s, error code: %s, error message: %s' % (
-            response.request_id, response.status_code,
-            response.code, response.message
-        ))
+    # if response.status_code == HTTPStatus.OK:
+    #     logger.info(response)
+    # else:
+    #     logger.info('Request id: %s, Status code: %s, error code: %s, error message: %s' % (
+    #         response.request_id, response.status_code,
+    #         response.code, response.message
+    #     ))
     return response.output.choices[0].message.content
 
 
@@ -45,7 +45,7 @@ def handle_image(img_path):
             encoded_image_str = data_uri_prefix + encoded_image_str
         return "ok", encoded_image_str
     else:
-        return "invalid type", bytes()
+        return "invalid type", ""
 
 #图片用base64的格式提交
 def call_with_image(encoded_image_str, content) -> str:    
@@ -84,6 +84,7 @@ def call_with_image(encoded_image_str, content) -> str:
         # else:        
         #     print("MIME type unsupported or not found.")
     res = completion.choices[0].message.content
+    # logger.info(res)
     # print(res)
     return res         
 
