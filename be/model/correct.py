@@ -1,4 +1,5 @@
 from be.utils.api import call_with_messages
+from be.utils.logger import logger
 class Correct:
     def __init__(self,text) -> None:
         self.text = text
@@ -9,5 +10,5 @@ class Correct:
                                         format(self.text))
         except BaseException as e:
             return 530, "{}".format(str(e)), ""
-        
+        # logger.info(result)
         return 200, "ok", result 

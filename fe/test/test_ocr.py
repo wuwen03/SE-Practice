@@ -1,16 +1,7 @@
-import base64
 import pytest
 from fe.access import ocr
 from fe import conf
-from be.utils.api import handle_image
 import os
-import logging
-
-# def getBody(filepath):
-#     with open(filepath, 'rb') as f:
-#         imgfile = f.read()
-#     data = str(base64.b64encode(imgfile), 'utf-8')
-#     return data
 
 class TestOcr:
     @pytest.fixture(autouse=True)

@@ -11,3 +11,10 @@ class Correct:
         url = urljoin(self.url_prefix, "correct")
         r = requests.post(url, json=json)
         return r.status_code, r.json().get("result")
+    
+    def do_correct_file(self, file_path: str) -> tuple[(int, str)]:
+        with open(file_path, 'rb') as f:
+            files = {'file': f}
+            url = urljoin(self.url_prefix, "correct/upload")
+            r = requests.post(url, files=files)
+            return r.status_code, r.json().get("result")
