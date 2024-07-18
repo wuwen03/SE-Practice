@@ -13,9 +13,12 @@
   |-- fe
 ```
 
-## 通义千问api使用方法
+# 通义千问api使用方法
 
-在使用前将api_key填到be/utils/api.py中的对应位置，然后在使用时候调用call_with_messages即可。参数是输入，返回值就是通义千问的输出。不过现在只支持文字的输入
+在使用前将api_key填到be/utils/key.py中的对应位置
+
+# 接口文档
+body后有标注的上传文件，其它上传json
 
 ## translate
 
@@ -65,20 +68,20 @@ message | string | 返回错误消息，成功时为"ok" | N
 ## ocr
 
 #### URL：
-POST http://$address$/ocr/
+POST http://$address$/ocr/upload
 
 #### Request
 
-Body:
+Body(files):
 ```
 {
-    "picture":"$picture$"
+    "file":"$pic_file$"
 }
 ```
 
 变量名 | 类型 | 描述 | 是否可为空
 ---|---|---|---
-picture | string | 编码后的图片 | N
+pic_file | file | 图片文件 | N
 
 #### Response
 
@@ -105,10 +108,10 @@ message | string | 返回错误消息，成功时为"ok" | N
 
 ## correct
 
-#### URL：
+#### URL1：
 POST http://$address$/correct/
 
-#### Request
+#### Request1
 
 Body:
 ```
@@ -120,6 +123,23 @@ Body:
 变量名 | 类型 | 描述 | 是否可为空
 ---|---|---|---
 content | string | 要批改的内容 | N
+
+#### URL2：
+POST http://$address$/correct/upload
+
+#### Request2
+
+Body(files):
+```
+{
+    "file":"$file$"
+}
+```
+
+变量名 | 类型 | 描述 | 是否可为空
+---|---|---|---
+file | file | .pdf .txt .docx文件 | N
+
 
 #### Response
 
@@ -147,10 +167,10 @@ message | string | 返回错误消息，成功时为"ok" | N
 
 ## summary
 
-#### URL：
+#### URL1：
 POST http://$address$/summary/
 
-#### Request
+#### Request1
 
 Body:
 ```
@@ -162,6 +182,22 @@ Body:
 变量名 | 类型 | 描述 | 是否可为空
 ---|---|---|---
 content | string | 要摘要的内容 | N
+
+#### URL2：
+POST http://$address$/summary/upload
+
+#### Request2
+
+Body(files):
+```
+{
+    "file":"$file$"
+}
+```
+
+变量名 | 类型 | 描述 | 是否可为空
+---|---|---|---
+file | file | .pdf .txt .docx文件 | N
 
 #### Response
 
