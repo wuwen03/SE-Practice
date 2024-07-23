@@ -12,6 +12,10 @@ class TestTranslate:
         code, result = self.translate.do_translate("にほんご", "english", "にほんご") #japanese
         assert code == 200
     
-    def test_error_language(self):
-        code, result = self.translate.do_translate("abc", "", "i love you")
+    def test_error_dst_language(self):
+        code, result = self.translate.do_translate("英语", "", "i love you")
         assert code == 200
+        
+    def test_error_scr_language(self):
+        code, result = self.translate.do_translate("abc", "にほんご", "i love you")
+        assert code == 200        
