@@ -1,0 +1,11 @@
+<view class="container">  
+  <image mode="widthFix" src="{{src}}"></image>
+</view>
+<button class="mybutton" bindtap="sendPhotoToBackend">Add Photo</button>
+<view class="container">  
+  <view class="fake-input-box">{{result}}</view>  
+</view>
+<button class="mybutton" bindtap="handleButtonClickIss1">Translate</button>
+<view class="container">  
+  <view class="fake-input-box">{{translated}}</view>  
+</view>
