@@ -45,4 +45,25 @@ Page({
             url: '/pages/trans/trans'
           });
       },
+    handleButtonClickCOR: function(e) {
+      // 处理按钮点击事件
+      console.log('Button translat clicked');
+      wx.navigateTo({
+          url: '/pages/cor/cor'
+        });
+    },
+    handleButtonClickSUM: function(e) {
+      // 处理按钮点击事件
+      console.log('Button translat clicked');
+      wx.navigateTo({
+          url: '/pages/sum/sum'
+        });
+    },
+    handleButtonClickOCR: function(e) {
+      // 处理按钮点击事件
+      console.log('Button ocr clicked');
+      wx.navigateTo({
+          url: '/pages/ocr/ocr'
+        });
+    },
   })
