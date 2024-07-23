@@ -8,7 +8,6 @@
             |-- correct
             |-- summary
             |-- ocr
-            |-- user(login register)
         |-- ....
   |-- fe
 ```
@@ -221,82 +220,3 @@ Body:
 result | string | 摘要结果内容 | N
 message | string | 返回错误消息，成功时为"ok" | N
 
-
-## login
-
-#### URL：
-POST http://$address$/user/login
-
-#### Request
-
-Body:
-```
-{
-
-}
-```
-
-变量名 | 类型 | 描述 | 是否可为空
----|---|---|---
-
-
-
-#### Response
-
-Status Code:
-
-
-码 | 描述
---- | ---
-200 | 登录成功
-5XX | 失败
-
-Body:
-```
-{
-    "language":"$language$"
-}
-```
-变量名 | 类型 | 描述 | 是否可为空
----|---|---|---
-language | string | 用户语言 | N
-message | string | 返回错误消息，成功时为"ok" | N
-
-
-## register
-
-#### URL：
-POST http://$address$/user/register
-
-#### Request
-
-Body:
-```
-{
-    "language":"$language$"
-}
-```
-
-变量名 | 类型 | 描述 | 是否可为空
----|---|---|---
-language | string | 用户选择的使用语言 | N
-
-#### Response
-
-Status Code:
-
-
-码 | 描述
---- | ---
-200 | 注册成功
-5XX | 失败
-
-Body:
-```
-{
-
-}
-```
-变量名 | 类型 | 描述 | 是否可为空
----|---|---|---
-message | string | 返回错误消息，成功时为"ok" | N

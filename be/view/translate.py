@@ -12,8 +12,6 @@ def translate():
     dst_language = request.json.get("dst_language")
     content = request.json.get("content")
 
-    logger.info("{},{},{}".format(src_language,dst_language,content))
-
     tran = Translate(src_language,dst_language,content)
     code,message,ans = tran.do_translate()
     # code,message,ans = 200,"","我爱你"
