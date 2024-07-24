@@ -1,0 +1,40 @@
+.picker{
+    padding: 13px;
+    background-color: #FFFFFF;
+}
+.page {
+    padding-top: 80px;
+}
+.text-and-image {
+    display: flex;
+    align-items: center; /* 垂直居中对齐 */
+  }
+  .inline-image {
+    display: inline-block;
+    width: 50rpx;
+    height: 50rpx;
+    vertical-align: middle; /* 与文本中部对齐 */
+    margin-left: 10rpx; /* 根据需要调整间距 */
+  }
+  .rounded-button {
+    border-radius: 16rpx; /* 圆角大小 */
+    background-color: #1aad19; /* 按钮背景色 */
+    color: #fff; /* 文字颜色 */
+    padding: 50rpx 100rpx; /* 内边距 */
+    margin-bottom: 20rpx; /* 按钮之间的间距 */
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  textarea {
+    width: 90%;
+    height: 100px;
+    margin-bottom: 20px;
+  }
+  .placeholder-style{
+    color: #2D94FF;
+  }

@@ -1,0 +1,5 @@
+<view class="button-container">
+  <button bindtap="handleButtonClickupload"class="rounded-button">上传文件</button>
+  <textarea class="output" placeholder="摘要输出" placeholder-class="placeholder-style" disabled="{{!summaryOutput}}">{{summaryOutput}}</textarea>
+  <textarea class="output" placeholder="翻译输出" placeholder-class="placeholder-style" disabled="{{!translatedOutput}}">{{translatedOutput}}</textarea>
+</view>
