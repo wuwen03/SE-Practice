@@ -1,0 +1,9 @@
+<view class="topbox"></view>
+<view class="butbox"></view>
+<view class="icon lick_1"></view>
+<view class="icon lick_2"></view>
+<textarea class="text" value="{{curText}}" maxlength="-1" bindinput="input" placeholder="编辑你的文字"></textarea>
+<button class="sub" bind:tap="submmit">提交</button>
+<scroll-view scroll-y="true" class="context">
+    <text wx:for="{{resli}}" style="background-color:{{item.bg}};">{{item.text}}</text>
+</scroll-view>
